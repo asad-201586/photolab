@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <item>
+        <shape android:shape="rectangle">
+            <stroke android:width="2dp" android:color="@color/toolbar_border"/>
+            <solid android:color="@color/bg_toolbar"/>
+        </shape>
+    </item>
+    <item android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <stroke android:width="2dp" android:color="@color/bg_toolbar"/>
+            <solid android:color="#00000000"/>
+        </shape>
+    </item>
+</layer-list>

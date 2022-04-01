@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/adView">
+
+        <RelativeLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorWhite"
+            android:elevation="@dimen/margin_5"
+            android:outlineProvider="paddedBounds">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                style="@style/ImageViewPIXEditorActivity"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="@drawable/tab_image_selector" />
+
+            <com.tools.photolab.effect.custom.CustomTextView
+                style="@style/CustomTextViewToolbarTitle"
+                android:text="@string/txt_share" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_layout"
+            android:layout_below="@+id/top_layout"
+            android:background="@color/colorWhite">
+
+            <ImageView
+                android:id="@+id/iv_create"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <ImageView
+                android:id="@+id/iv_home"
+                style="@style/ImageViewPIXEditorActivity"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_home"
+                app:tint="@drawable/tab_image_selector" />
+
+            <ImageView
+                android:id="@+id/iv_share"
+                style="@style/ImageViewPIXEditorActivity"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_share"
+                app:tint="@drawable/tab_image_selector" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/adView"
+        style="@style/BannerAdsView"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/imgeffect"
+        android:layout_width="@dimen/margin_60"
+        android:layout_height="@dimen/margin_60"
+        android:layout_margin="@dimen/margin_5"
+        android:background="@drawable/highlight"
+        android:padding="@dimen/margin_5"
+        android:src="@drawable/bg_2" />
+</LinearLayout>

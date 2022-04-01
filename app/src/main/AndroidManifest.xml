@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.tools.photolab">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:name="com.tools.photolab.effect.MainApplication"
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name="com.tools.photolab.effect.activity.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.tools.photolab.effect.activity.NeonActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tools.photolab.effect.activity.WingsActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tools.photolab.effect.activity.FramesActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tools.photolab.effect.erase_tool.StickerEraseActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tools.photolab.effect.activity.HomeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tools.photolab.effect.activity.PixLabActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tools.photolab.effect.blur_tool.BlurActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tools.photolab.effect.color_splash_tool.ColorSplashActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tools.photolab.effect.activity.ShareActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tools.photolab.effect.activity.MyCreatePhotosActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tools.photolab.effect.activity.CreatePhotoViewActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tools.photolab.effect.activity.CropPhotoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+            android:name="com.tools.photolab.effect.motion_tool.MotionEffectActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tools.photolab.effect.activity.DripEffectActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher" />
+        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"
+                tools:replace="android:resource" />
+        </provider>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+
+    </application>
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
+</manifest>

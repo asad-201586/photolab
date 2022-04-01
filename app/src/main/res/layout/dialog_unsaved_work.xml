@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_rounded_corner_white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_rounded_top_corner_black"
+        android:gravity="center"
+        android:padding="@dimen/margin_10"
+        android:text="@string/alert"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/permission_des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginRight="@dimen/margin_10"
+        android:gravity="center_horizontal"
+        android:text="@string/exit_cut_page"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/margin_14"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/yes"
+            android:layout_width="@dimen/margin_120"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button_selector_no"
+            android:text="Yes"
+            android:textAllCaps="false"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/no"
+            android:layout_width="@dimen/margin_120"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button_selector_no"
+            android:text="No"
+            android:textAllCaps="false"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

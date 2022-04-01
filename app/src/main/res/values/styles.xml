@@ -1,0 +1,202 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="LinearLayoutMain">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/margin_5</item>
+        <item name="android:orientation">vertical</item>
+
+    </style>
+
+    <style name="LinearLayoutMain2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/margin_5</item>
+
+    </style>
+
+    <style name="ImageViewMain">
+        <item name="android:layout_width">@dimen/margin_40</item>
+        <item name="android:layout_height">@dimen/margin_40</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/margin_5</item>
+
+    </style>
+
+    <style name="ImageViewPIXEditorActivity">
+        <item name="android:layout_width">?attr/actionBarSize</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:padding">@dimen/margin_16</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:background">@drawable/selector</item>
+        <item name="android:clickable">true</item>
+        <item name="tint">@color/colorBlack</item>
+
+    </style>
+
+
+    <style name="CustomTextViewToolbarTitle">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_toRightOf">@+id/iv_back</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_18</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="mainOptionLinear">
+        <item name="android:layout_width">70dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingBottom">@dimen/margin_12</item>
+        <item name="android:paddingLeft">@dimen/margin_5</item>
+        <item name="android:paddingRight">@dimen/margin_5</item>
+        <item name="android:paddingTop">@dimen/margin_12</item>
+    </style>
+
+    <style name="CustomLollipopDialogStyle" parent="android:Theme.Material.Light.Dialog.Alert">
+        <item name="android:buttonBarButtonStyle">@style/CustomButtonBarButtonStyle</item>
+        <item name="android:buttonBarStyle">@style/CustomButtonBarStyle</item>
+    </style>
+
+    <style name="CustomButtonBarStyle" parent="@android:style/Widget.Material.Light.ButtonBar.AlertDialog">
+        <!-- Making sure, the button bar uses parent width and is not restricted in height -->
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:height">@null</item>
+        <item name="android:minHeight">@null</item>
+    </style>
+
+    <style name="CustomButtonBarButtonStyle" parent="@android:style/Widget.Material.Light.Button.Borderless.Colored">
+        <!-- Setting the weight as follows should result in equally wide buttons filling the alert dialog width,
+            but instead they span further out of the dialog, breaking in multiple lines though -->
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <!-- TODO: setting a fixed width as follows results in narrow buttons with line breaks, but of course this is not a solution -->
+        <item name="android:width">100dp</item>
+    </style>
+
+
+    <style name="ImageViewPIPCamActivity">
+        <item name="android:layout_width">?attr/actionBarSize</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:padding">@dimen/margin_14</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:background">@drawable/selector</item>
+        <item name="android:clickable">true</item>
+        <item name="tint">@color/colorWhite</item>
+
+    </style>
+
+
+
+    <style name="LinearLayoutHome">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin_5</item>
+        <item name="android:foreground">?selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="ImageViewHome">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
+    <style name="TextViewHomeAds">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_13</item>
+    </style>
+
+    <style name="neonBottomTab">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginTop">@dimen/margin_2</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/textsize_12</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="fontName">@string/font_josefinSans_bold</item>
+    </style>
+
+    <style name="AppBackButton">
+        <item name="android:layout_width">?attr/actionBarSize</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:padding">19dp</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="srcCompat">@drawable/ic_arrow_back_black</item>
+        <item name="tint">@color/colorWhite</item>
+    </style>
+
+    <style name="ThemeToolbar">
+        <item name="android:textColorSecondary">@android:color/black</item>
+        <item name="android:textColorHint">@android:color/black</item>
+        <item name="android:editTextColor">@android:color/black</item>
+        <item name="android:actionMenuTextColor">@android:color/black</item>
+    </style>
+
+    <style name="styleShowHomeMainOption">
+        <item name="android:layout_width">@dimen/margin_35</item>
+        <item name="android:layout_height">@dimen/margin_35</item>
+        <item name="android:layout_alignParentRight">true</item>
+
+        <item name="android:src">@drawable/ic_sticker_close_btn</item>
+    </style>
+
+    <style name="ImageViewBottom">
+        <item name="android:layout_width">@dimen/margin_40</item>
+        <item name="android:layout_height">@dimen/margin_40</item>
+        <item name="android:background">@drawable/app_menu_back</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:padding">@dimen/margin_10</item>
+    </style>
+
+    <style name="TextViewBottom">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:layout_marginTop">@dimen/margin_5</item>
+        <item name="android:layout_marginBottom">@dimen/margin_5</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+    <style name="TextViewBottom2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="MySeekBar" parent="Widget.AppCompat.SeekBar">
+        <item name="android:progressBackgroundTint" tools:targetApi="lollipop">@color/colorWhite</item>
+        <item name="android:progressTint" tools:targetApi="lollipop">@color/colorBlack</item>
+        <item name="android:colorControlActivated" tools:targetApi="lollipop">@color/colorBlack</item>
+    </style>
+
+    <style name="BannerAdsView">
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+</resources>

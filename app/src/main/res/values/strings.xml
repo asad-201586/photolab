@@ -1,0 +1,129 @@
+<resources>
+    <string name="app_name">App Name</string>
+    <string name="txt_share_with">Share with</string>
+    <string name="txt_gallery">Gallery</string>
+    <string name="filter_normal">Normal</string>
+    <string name="phone_camera_permission_not_granted">Phone Camera permission not granted</string>
+    <string name="storage_permission_not_granted">Storage permission not granted</string>
+    <string name="txt_select_picture">Select Picture</string>
+    <string name="media_access_denied_msg">You denied storage access, no photos will be added.</string>
+    <string name="txt_save">Save</string>
+    <string name="txt_pix_editor">Pix Editor</string>
+    <string name="share_using">Share using</string>
+    <string name="txt_image_not_Detacted">Image not detached</string>
+    <string name="app_folder_sticker">/PixStickers</string>
+    <string name="txt_module">Module</string>
+    <string name="txt_foreground">Foreground</string>
+    <string name="txt_background">Background</string>
+    <string name="txt_stickers">Stickers</string>
+    <string name="pls_click_on_sticker">Please Click on Sticker</string>
+    <string name="txt_back_change">Back Change</string>
+    <string name="txt_image_is_not_load_yet">Image is not load yet</string>
+    <string name="txt_no_internet_connection">No internet connection</string>
+    <string name="app_file">PHOTO_</string>
+    <string name="app_folder">/Pictures/PhotoEditorApp</string>
+    <string name="app_folder2">PhotoEditorApp</string>
+    <string name="app_folder3">/PhotoEditorApp</string>
+    <string name="err_whatsapp_not_installed">You not have a WhatsApp application on your mobile.</string>
+    <string name="err_instagram_not_installed">You not have a Instagram application on your mobile.</string>
+    <string name="err_gmail_not_installed">You not have a Gmail application on your mobile.</string>
+    <string name="share_with">Share with</string>
+    <string name="txt_share">Share</string>
+    <string name="txt_ok">Ok</string>
+    <string name="txt_cancel">Cancel</string>
+    <string name="txt_not_photo_found">You haven\'t create any photos yet</string>
+    <string name="app_click_file">Click</string>
+    <string name="txt_create">Create</string>
+    <string name="txt_my_photos">My Photos</string>
+    <string name="txt_no">NO</string>
+    <string name="txt_yes">YES</string>
+    <string name="txt_delete_message">Do you want to delete this photo?</string>
+    <string name="txt_file_delete_successfully">File Deleted Successfully</string>
+
+    <!--Test Admob id -->
+<!--    <string name="admob_application_id">ca-app-pub-3940256099942544~3347511713</string>-->
+<!--    <string name="admob_banner_ads_id">ca-app-pub-3940256099942544/6300978111</string>-->
+    <string name="admob_banner_ads_id">/6499/example/banner</string>
+<!--    <string name="admob_interstitial_ads_id">ca-app-pub-3940256099942544/1033173712</string>-->
+    <string name="admob_interstitial_ads_id">/6499/example/interstitial</string>
+
+    <string name="font_pacifico">Pacifico-Regular.ttf</string>
+    <string name="font_josefinSans_regular">JosefinSans-Regular.ttf</string>
+    <string name="font_josefinSans_bold">JosefinSans-Bold.ttf</string>
+    <string name="font_josefinSans_semi_bold">JosefinSans-SemiBold.ttf</string>
+    <string name="txt_Saved">Saved</string>
+    <string name="txt_camera">Camera</string>
+    <string name="txt_frame">Frame</string>
+    <string name="txt_effect">Effect</string>
+    <string name="txt_filter">Filter</string>
+    <string name="txt_frame_color">Frame Color</string>
+    <string name="txt_crop">Crop</string>
+    <string name="action_settings">Settings</string>
+    <string name="txtCamera">Camera</string>
+    <string name="txtGallery">Gallery</string>
+    <string name="txt_neon_editor">Neon Editor</string>
+    <string name="txt_neon">Neon</string>
+    <string name="txt_shape">Shape</string>
+    <string name="txt_wings">Wings</string>
+    <string name="txt_erase">Erase</string>
+    <string name="cut_photo">Select Photo</string>
+    <string name="offset">Offset</string>
+    <string name="radius">Size</string>
+    <string name="threshold">Threshold</string>
+    <string name="cut_outside">Cut Outside</string>
+    <string name="cut_inside">Cut Inside</string>
+    <string name="msg_auto_btn">Click AUTO button to perform auto erase</string>
+    <string name="msg_lasso_btn">Click EXTRACT button</string>
+    <string name="msg_manual_btn">Click MANUAL button to manually erase</string>
+    <string name="msg_bw_btn">Click RESTORE button to restore image</string>
+    <string name="msg_zoom_btn">Click ZOOM button to drag and zoom image.</string>
+    <string name="auto">Auto</string>
+    <string name="lasso">Extract</string>
+    <string name="erase">Manual</string>
+    <string name="restore">Restore</string>
+    <string name="zoom">Zoom</string>
+    <string name="msg_up_arrow">Click UP arrow to get options</string>
+    <string name="drag_color">Drag POINTER to earse.</string>
+    <string name="msg_draw_lasso">Draw a closed path.</string>
+    <string name="redoing">Redoing</string>
+    <string name="drag_bw">Drag POINTER to restore image.</string>
+    <string name="undoing">Undoing</string>
+    <string name="import_img_warning">Please import image!!!</string>
+    <string name="create_dir_err">Cant create directory to save image.</string>
+    <string name="importing_image">Importing image…</string>
+    <string name="import_error">Error while getting image.</string>
+    <string name="alert">Unsaved work</string>
+    <string name="exit_cut_page">Do you want to exit without saving?</string>
+    <string name="text_drip_accept_title">Accept</string>
+    <string name="text_blur_image_save_cancel">CANCEL</string>
+    <string name="blur">Blur</string>
+    <string name="drip">Drip</string>
+    <string name="pix_lab">Pix Lab</string>
+    <string name="wings">Wings</string>
+    <string name="neon">Neon</string>
+    <string name="txt_drip_editor">Drip Editor</string>
+    <string name="please_try_again">Oops, Please try again...</string>
+    <string name="txt_drip">Drip</string>
+    <string name="txt_not_detect_human">Human detection is failed. Please try again.</string>
+    <string name="directory">PhotoEditorTemp</string>
+    <string name="txt_motion">Motion</string>
+    <string name="text_rotate">Rotate</string>
+    <string name="text_density">Density</string>
+    <string name="text_opacity">Opacity</string>
+    <string name="txt_motion_effect">Motion Effect</string>
+
+    <!-- Rate now strings-->
+    <string name="rate_dialog_title">Rate this app</string>
+    <string name="rate_dialog_message">If you enjoy playing this app, would you mind taking a moment to rate it? It won\'t take more than a minute. Thanks for your support!</string>
+    <string name="rate_dialog_ok">Rate It Now</string>
+    <string name="txt_package_app_2">PACKAGE_BANE</string>
+
+    //APP_PACKAGE_NAME replace with your app package name
+    <string name="txt_open_app_2">https://play.google.com/store/apps/details?id=APP_PACKAGE_NAME</string>
+    <string name="txt_app_share_info">App Share Text:  https://play.google.com/store/apps/details?id=PACKAGE_NAME</string>
+    <string name="rate_dialog_cancel">Remind Me Later</string>
+    <string name="rate_dialog_no">No, Thanks</string>
+    <string name="default_notification_channel_id">1000</string>
+
+
+</resources>

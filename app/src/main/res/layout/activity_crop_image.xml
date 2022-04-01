@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:elevation="@dimen/margin_5"
+        android:outlineProvider="paddedBounds"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            style="@style/ImageViewPIXEditorActivity"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@drawable/tab_image_selector" />
+
+        <com.tools.photolab.effect.custom.CustomTextView
+            style="@style/CustomTextViewToolbarTitle"
+            android:text="@string/txt_crop" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_above="@+id/adView"
+        android:layout_below="@+id/top_layout"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/adView"
+        style="@style/BannerAdsView"/>
+
+</RelativeLayout>

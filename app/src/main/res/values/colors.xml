@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+<!--    <color name="colorAccent">#18c6ff</color>-->
+    <color name="colorAccent">#000000</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGray">#b6b5b5</color>
+    <color name="colorBlack_60">#c5000000</color>
+    <color name="colorRecyclerViewBack">#d1d1d1</color>
+    <color name="colorWhiteOverlay">#abffffff</color>
+    <color name="light_gray2">#eeeeee</color>
+<!--    <color name="overlay">#8118c6ff</color>-->
+    <color name="overlay">#81000000</color>
+    <color name="black_transparent">#64000000</color>
+    <color name="toolbarcolor">#ffffffff</color>
+    <color name="main_theme">#4a4a4a</color>
+    <color name="barcolor">#ecebeb</color>
+    <color name="selected">#ecebeb</color>
+    <color name="popupcolor">#000000</color>
+    <color name="dialogIconColor">#000000</color>
+    <color name="red_e73a3d">#e73a3d</color>
+    <color name="colorbg">#595959</color>
+    <color name="grayst">#a2404040</color>
+    <color name="color_add_btn">@color/colorAccent</color>
+    <color name="toolbar_border">#d0d0d0</color>
+    <color name="bg_toolbar">#fefefe</color>
+    <color name="color_select">#93e037</color>
+</resources>

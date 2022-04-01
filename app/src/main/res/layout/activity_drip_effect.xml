@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+
+
+    <RelativeLayout
+        android:id="@+id/lout_header"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            style="@style/ImageViewPIXEditorActivity"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@drawable/tab_image_selector" />
+
+        <com.tools.photolab.effect.custom.CustomTextView
+            android:id="@+id/tv_title"
+            style="@style/CustomTextViewToolbarTitle"
+            android:text="@string/txt_drip_editor" />
+
+        <ImageView
+            android:id="@+id/tv_applay"
+            style="@style/ImageViewPIXEditorActivity"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/margin_16"
+            android:src="@drawable/ic_download"
+            app:tint="@drawable/tab_image_selector" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/adView"
+        android:layout_below="@id/lout_header"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/mContentRootView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/nestedScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_margin="@dimen/margin_10"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.tools.photolab.effect.drip_tool.utils.CustomFrameLayout
+                            android:id="@+id/frameMain"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#ffffff">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <com.tools.photolab.effect.drip_tool.imagescale.CollageView
+                                    android:id="@+id/frameBack"
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:scaleType="fitCenter"
+                                    android:visibility="gone"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.tools.photolab.effect.drip_tool.imagescale.CollageView
+                                    android:id="@+id/imgpost"
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:scaleType="centerCrop"
+                                    android:visibility="visible"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.tools.photolab.effect.drip_tool.imagescale.CollageView
+                                    android:id="@+id/frameFront"
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:scaleType="fitCenter"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                                <!--                    drip-->
+                                <com.tools.photolab.effect.drip_tool.imagescale.CollageView
+                                    android:id="@+id/dripView"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/drip_1"
+                                    android:tint="@color/colorWhite"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.tools.photolab.effect.drip_tool.utils.CustomFrameLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ProgressBar
+                    android:id="@+id/crop_progress_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:progress="0"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_75">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_75"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:background="@color/colorWhite"
+                app:tabGravity="fill"
+                app:tabIndicatorHeight="0dp"
+                app:tabMode="fixed"
+                app:tabPaddingEnd="0dp"
+                app:tabPaddingStart="0dp" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalSV"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_75"
+                android:layout_gravity="center_vertical"
+                android:background="#55000000"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/styles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal" />
+            </HorizontalScrollView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDripFilters"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_75"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/colorRecyclerViewBack" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcbackground"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_75"
+                android:background="@color/colorRecyclerViewBack"
+                android:scrollbars="none"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivShowHomeOption"
+        style="@style/styleShowHomeMainOption"
+        android:layout_above="@id/adView"
+        android:layout_gravity="right"
+        android:layout_marginRight="@dimen/margin_5"
+        android:layout_marginBottom="@dimen/margin_80" />
+
+    <RelativeLayout
+        android:id="@+id/adView"
+        android:minHeight="@dimen/margin_50"
+        style="@style/BannerAdsView"/>
+</RelativeLayout>

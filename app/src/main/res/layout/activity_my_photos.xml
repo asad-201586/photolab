@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:outlineProvider="paddedBounds"
+        android:elevation="@dimen/margin_5"
+        android:background="@color/colorWhite">
+
+
+        <ImageView
+            app:tint="@drawable/tab_image_selector"
+            android:id="@+id/iv_back"
+            style="@style/ImageViewPIXEditorActivity"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ic_arrow_back" />
+
+        <com.tools.photolab.effect.custom.CustomTextView
+            style="@style/CustomTextViewToolbarTitle"
+            android:text="@string/txt_my_photos" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/colorRecyclerViewBack">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:background="@color/colorRecyclerViewBack"
+            android:id="@+id/recyclerMyPhotos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:padding="@dimen/margin_1" />
+
+        <LinearLayout
+            android:id="@+id/relDataNotFound"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/margin_100"
+                android:layout_height="@dimen/margin_100"
+                android:src="@drawable/ic_image_not_edited"
+                app:tint="@color/colorBlack" />
+
+            <com.tools.photolab.effect.custom.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="@string/txt_not_photo_found"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textsize_18" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/adView"
+        style="@style/BannerAdsView"/>
+
+</LinearLayout>

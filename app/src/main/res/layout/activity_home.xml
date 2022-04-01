@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="blocksDescendants"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/adView"
+            style="@style/BannerAdsView"
+
+            android:minHeight="@dimen/margin_55" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/lin_neon_effect"
+                    style="@style/LinearLayoutHome"
+                    android:padding="@dimen/margin_5">
+
+                    <com.tools.photolab.effect.custom.SquareImageView
+                        style="@style/ImageViewHome"
+                        android:src="@drawable/ic_neon_effect" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin_wings_effect"
+                    style="@style/LinearLayoutHome">
+
+                    <com.tools.photolab.effect.custom.SquareImageView
+                        style="@style/ImageViewHome"
+                        android:src="@drawable/ic_wings_editor" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin_frame_effect"
+                    style="@style/LinearLayoutHome">
+
+                    <com.tools.photolab.effect.custom.SquareImageView
+                        style="@style/ImageViewHome"
+                        android:src="@drawable/ic_frames_editor" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin_pix"
+                    style="@style/LinearLayoutHome">
+
+                    <com.tools.photolab.effect.custom.SquareImageView
+                        style="@style/ImageViewHome"
+                        android:src="@drawable/ic_pix_lab_editor" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin_drip_effect"
+                    style="@style/LinearLayoutHome">
+
+                    <com.tools.photolab.effect.custom.SquareImageView
+                        style="@style/ImageViewHome"
+                        android:src="@drawable/ic_drip" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin_motion_effect"
+                    style="@style/LinearLayoutHome">
+
+                    <com.tools.photolab.effect.custom.SquareImageView
+                        style="@style/ImageViewHome"
+                        android:src="@drawable/ic_motion_effect" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin_b_w_effect"
+                    style="@style/LinearLayoutHome">
+
+                    <com.tools.photolab.effect.custom.SquareImageView
+                        style="@style/ImageViewHome"
+                        android:src="@drawable/ic_b_w_editor" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin_blur_effect"
+                    style="@style/LinearLayoutHome">
+
+                    <com.tools.photolab.effect.custom.SquareImageView
+                        style="@style/ImageViewHome"
+                        android:src="@drawable/ic_blur_effect" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin_my_photos"
+                    style="@style/LinearLayoutHome">
+
+                    <com.tools.photolab.effect.custom.SquareImageView
+                        style="@style/ImageViewHome"
+                        android:src="@drawable/ic_my_photos" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

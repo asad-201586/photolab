@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="@dimen/margin_20"
+        android:height="@dimen/margin_20">
+        <shape android:shape="oval">
+            <solid android:color="@color/colorWhite" />
+        </shape>
+    </item>
+    <item
+        android:width="@dimen/margin_20"
+        android:height="@dimen/margin_20"
+        android:drawable="@drawable/ic_sticker_opt_close_white_18dp" >
+    </item>
+</layer-list>

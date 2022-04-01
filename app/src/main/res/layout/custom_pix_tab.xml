@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/margin_2"
+    android:paddingTop="@dimen/margin_5">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="@dimen/margin_25"
+        android:layout_height="@dimen/margin_25"
+        android:src="@drawable/ic_module"
+        app:tint="@drawable/tab_image_selector" />
+
+    <com.tools.photolab.effect.custom.CustomTextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center_horizontal"
+        android:singleLine="true"
+        android:text="@string/txt_back_change"
+        android:textColor="@drawable/tab_image_selector"
+        android:textSize="@dimen/textsize_12" />
+
+</LinearLayout>
+

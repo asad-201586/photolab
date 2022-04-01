@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/lout_header"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            style="@style/ImageViewPIXEditorActivity"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@drawable/tab_image_selector" />
+
+        <com.tools.photolab.effect.custom.CustomTextView
+            android:id="@+id/tv_title"
+            style="@style/CustomTextViewToolbarTitle"
+            android:text="@string/txt_neon_editor" />
+
+        <ImageView
+            android:id="@+id/tv_applay"
+            style="@style/ImageViewPIXEditorActivity"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/margin_16"
+            android:src="@drawable/ic_download"
+            app:tint="@drawable/tab_image_selector" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/adView"
+        android:layout_below="@id/lout_header"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/mContentRootView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/iv_face"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="visible" />
+
+                        <ImageView
+                            android:id="@+id/setback"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:id="@+id/setimg"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:id="@+id/setfront"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </RelativeLayout>
+
+
+                    <com.tools.photolab.effect.custom.stickerView.StickerView
+                        android:id="@+id/sticker_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:showBorder="true"
+                        app:showIcons="true">
+
+
+                    </com.tools.photolab.effect.custom.stickerView.StickerView>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_100">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_75"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:background="@color/colorWhite"
+                    app:tabGravity="fill"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabMode="fixed"
+                    app:tabPaddingEnd="0dp"
+                    app:tabPaddingStart="0dp" />
+
+                <LinearLayout
+                    android:id="@+id/linBackgroundBlur"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_75"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorRecyclerViewBack"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatSeekBar
+                        android:id="@+id/sbBackgroundOpacity"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:max="100"
+                        android:min="1"
+                        android:progress="1"
+                        android:progressTint="@android:color/white"
+                        android:thumbTint="@android:color/white" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="@dimen/margin_25"
+                    android:background="@color/colorRecyclerViewBack" />
+
+                <LinearLayout
+                    android:id="@+id/linEffect"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_100"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_25"
+                        android:background="#55000000"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/margin_10"
+                        android:paddingRight="@dimen/margin_5">
+
+                        <com.tools.photolab.effect.custom.CustomTextView
+                            android:id="@+id/tvNeonList"
+                            style="@style/neonBottomTab"
+                            android:background="@drawable/bottom_tab_back_selected"
+                            android:text="@string/txt_neon"
+                            android:textColor="@color/colorWhite" />
+
+                       <!-- <com.photolabeditor.elegant.effect.custom.CustomTextView
+                            android:id="@+id/tvWingsList"
+                            style="@style/neonBottomTab"
+                            android:text="@string/txt_wings" />-->
+
+                        <com.tools.photolab.effect.custom.CustomTextView
+                            android:id="@+id/tvShapeList"
+                            style="@style/neonBottomTab"
+                            android:text="@string/txt_shape" />
+
+                        <androidx.appcompat.widget.AppCompatSeekBar
+                            android:id="@+id/sbFrameOpacity"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:max="100"
+                            android:progress="100"
+                            android:progressTint="@android:color/white"
+                            android:thumbTint="@android:color/white" />
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerNeonEffect"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_75"
+                        android:background="@color/colorRecyclerViewBack"
+                        android:scrollbars="none" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linThirdDivisionOption"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorWhiteOverlay">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerSticker"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:nestedScrollingEnabled="false"
+                    android:visibility="visible" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <com.tools.photolab.effect.custom.CustomTextView
+                    android:id="@+id/tvText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/margin_15"
+                    android:paddingRight="@dimen/margin_15"
+                    android:text="@string/txt_stickers"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/textsize_16" />
+
+                <!--suppress AndroidDomInspection -->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivClose"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignTop="@id/tvText"
+                    android:layout_alignBottom="@id/tvText"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_cross_white"
+                    android:tint="@color/colorBlack" />
+
+                <!--suppress AndroidDomInspection -->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivCheckMark"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignTop="@id/tvText"
+                    android:layout_alignBottom="@id/tvText"
+                    android:layout_alignParentRight="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_checkmark_white"
+                    android:tint="@color/colorBlack" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ivShowHomeOption"
+        style="@style/styleShowHomeMainOption"
+        android:layout_above="@id/adView"
+        android:layout_gravity="right"
+        android:layout_marginRight="@dimen/margin_5"
+        android:layout_marginBottom="@dimen/margin_110" />
+
+
+    <ProgressBar
+        android:id="@+id/crop_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:progress="0"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/adView"
+        android:minHeight="@dimen/margin_50"
+        style="@style/BannerAdsView"/>
+
+
+</RelativeLayout>

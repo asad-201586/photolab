@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_above="@id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_alignParentTop="true"
+            android:id="@+id/lout_header"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                style="@style/ImageViewPIXEditorActivity"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="@drawable/tab_image_selector" />
+
+            <com.tools.photolab.effect.custom.CustomTextView
+                android:id="@+id/tv_title"
+                style="@style/CustomTextViewToolbarTitle"
+                android:text="@string/txt_motion_effect" />
+
+            <ImageView
+                android:id="@+id/tv_applay"
+                style="@style/ImageViewPIXEditorActivity"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/margin_16"
+                android:src="@drawable/ic_download"
+                app:tint="@drawable/tab_image_selector" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_below="@+id/lout_header"
+            android:id="@+id/relativeLayoutTemplateMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/control_area"
+            android:background="@color/colorWhite">
+
+            <com.tools.photolab.effect.motion_tool.ImageViewTouch
+                android:id="@+id/imageViewCenter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/imageBW"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="matrix" />
+
+            <ImageView
+                android:id="@+id/imageColor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="matrix" />
+
+            <ImageView
+                android:id="@+id/mainImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="matrix" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:id="@+id/control_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_marginHorizontal="@dimen/margin_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_toLeftOf="@+id/iv_erase"
+                    android:padding="@dimen/margin_10"
+                    android:id="@+id/rSliderRotate"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_40"
+                    android:layout_gravity="center"
+                    android:background="@drawable/app_back_motion"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.tools.photolab.effect.custom.CustomTextView
+                        android:id="@+id/nameRotate"
+                        app:fontName="@string/font_josefinSans_bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:text="@string/text_rotate"
+                        android:textColor="@color/colorBlack"
+                        />
+
+                    <SeekBar
+                        android:id="@+id/sliderRotate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/progressRotate"
+                        android:layout_toRightOf="@+id/nameRotate" />
+
+                    <com.tools.photolab.effect.custom.CustomTextView
+                        android:id="@+id/progressRotate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:text="vfvf"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/textSize_12" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:background="@drawable/app_back_motion"
+                    android:id="@+id/iv_erase"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="@dimen/margin_40"
+                    android:layout_height="@dimen/margin_40"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_8"
+                    android:src="@drawable/ic_erase"
+                    app:tint="@color/colorBlack" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_margin="@dimen/margin_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_marginRight="2.5dp"
+                    android:background="@drawable/app_back_motion"
+                    android:id="@+id/rSliderDensity"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_40"
+                    android:layout_weight="1">
+
+                    <com.tools.photolab.effect.custom.CustomTextView
+                        android:id="@+id/nameDensity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+
+                        android:text="@string/text_density"
+                        app:fontName="@string/font_josefinSans_bold"
+                        android:textColor="@color/colorBlack"
+                        />
+
+                    <SeekBar
+                        android:id="@+id/sliderDensity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/progressDensity"
+                        android:layout_toRightOf="@+id/nameDensity" />
+
+                    <com.tools.photolab.effect.custom.CustomTextView
+                        android:id="@+id/progressDensity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:text="vdvd"
+                        android:textColor="@color/colorBlack" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_marginLeft="2.5dp"
+                    android:background="@drawable/app_back_motion"
+                    android:id="@+id/rSliderOpacity"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_40"
+                    android:layout_weight="1">
+
+                    <com.tools.photolab.effect.custom.CustomTextView
+                        android:id="@+id/nameOpacity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:text="@string/text_opacity"
+                        app:fontName="@string/font_josefinSans_bold"
+                        android:textColor="@color/colorBlack"
+                        />
+
+                    <SeekBar
+                        android:id="@+id/sliderOpacity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/progressOpacity"
+                        android:layout_toRightOf="@+id/nameOpacity" />
+
+                    <com.tools.photolab.effect.custom.CustomTextView
+                        android:id="@+id/progressOpacity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:text="dvdv"
+                        android:textColor="@color/colorBlack" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/crop_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:progress="0"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:minHeight="@dimen/margin_50"
+        android:id="@+id/adView"
+        style="@style/BannerAdsView"/>
+
+</RelativeLayout>

@@ -1,0 +1,93 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.tools.photolab.effect.crop_img.CropImageView
+        android:id="@+id/cropImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="@dimen/spacing_xlarge"
+        custom:scv_background_color="@color/light_gray2"
+        custom:scv_crop_mode="fit_image"
+        custom:scv_frame_color="@color/colorAccent"
+        custom:scv_frame_stroke_weight="1dp"
+        custom:scv_guide_color="@color/colorAccent"
+        custom:scv_guide_show_mode="show_always"
+        custom:scv_guide_stroke_weight="1dp"
+        custom:scv_handle_color="@color/colorAccent"
+        custom:scv_handle_show_mode="show_always"
+        custom:scv_handle_size="8dp"
+        custom:scv_min_frame_size="50dp"
+        custom:scv_overlay_color="@color/overlay"
+        custom:scv_touch_padding="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/linRotation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/buttonRotateLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="@dimen/spacing"
+                    android:src="@drawable/ic_rotate_left_black_24dp"
+                    android:tint="@color/colorBlack" />
+
+                <ImageButton
+                    android:id="@+id/buttonRotateRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="@dimen/spacing"
+                    android:src="@drawable/ic_rotate_right_black_24dp"
+                    android:tint="@color/colorBlack" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/buttonCancel"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/linRotation"
+                android:background="?attr/selectableItemBackground"
+                android:padding="15dp"
+                android:src="@drawable/ic_cross_white"
+                android:tint="@color/colorBlack" />
+
+            <ImageView
+                android:id="@+id/buttonDone"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/linRotation"
+                android:layout_alignParentRight="true"
+                android:background="?attr/selectableItemBackground"
+                android:padding="15dp"
+                android:src="@drawable/ic_checkmark_white"
+                android:tint="@color/colorBlack" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
