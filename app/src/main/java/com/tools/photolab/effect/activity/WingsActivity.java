@@ -510,6 +510,7 @@ public class WingsActivity extends BaseActivity implements MenuItemClickLister, 
         startActivity(intent);
         finish();
         overridePendingTransition(R.anim.enter, R.anim.exit);
+        AdsNetwork.shoAdmobInters(this);
     }
 
     public void setUpBottomList() {
@@ -698,13 +699,13 @@ public class WingsActivity extends BaseActivity implements MenuItemClickLister, 
             findViewById(R.id.ivShowHomeOption).setVisibility(View.VISIBLE);
             if (e == null) {
 
-
-                FullScreenAdManager.fullScreenAdsCheckPref(WingsActivity.this, FullScreenAdManager.ALL_PREFS.ATTR_ON_SHARE_SCREEN, new FullScreenAdManager.GetBackPointer() {
-                    @Override
-                    public void returnAction() {
-                        openShareActivity();
-                    }
-                });
+                openShareActivity();
+//                FullScreenAdManager.fullScreenAdsCheckPref(WingsActivity.this, FullScreenAdManager.ALL_PREFS.ATTR_ON_SHARE_SCREEN, new FullScreenAdManager.GetBackPointer() {
+//                    @Override
+//                    public void returnAction() {
+//                        openShareActivity();
+//                    }
+//                });
 
 
             } else {

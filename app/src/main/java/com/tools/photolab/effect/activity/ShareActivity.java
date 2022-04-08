@@ -40,15 +40,20 @@ public class ShareActivity extends BaseActivity {
         (findViewById(R.id.iv_home)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FullScreenAdManager.fullScreenAdsCheckPref(ShareActivity.this, FullScreenAdManager.ALL_PREFS.ATTR_ON_HOME_SCREEN, new FullScreenAdManager.GetBackPointer() {
-                    @Override
-                    public void returnAction() {
-                        Intent finishIntent = new Intent(ShareActivity.this, HomeActivity.class);
-                        finishIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(finishIntent);
-                        overridePendingTransition(R.anim.enter, R.anim.exit);
-                    }
-                });
+                Intent finishIntent = new Intent(ShareActivity.this, HomeActivity.class);
+                finishIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(finishIntent);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
+                AdsNetwork.shoAdmobInters(ShareActivity.this);
+//                FullScreenAdManager.fullScreenAdsCheckPref(ShareActivity.this, FullScreenAdManager.ALL_PREFS.ATTR_ON_HOME_SCREEN, new FullScreenAdManager.GetBackPointer() {
+//                    @Override
+//                    public void returnAction() {
+//                        Intent finishIntent = new Intent(ShareActivity.this, HomeActivity.class);
+//                        finishIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                        startActivity(finishIntent);
+//                        overridePendingTransition(R.anim.enter, R.anim.exit);
+//                    }
+//                });
             }
         });
         (findViewById(R.id.iv_back)).setOnClickListener(new View.OnClickListener() {
@@ -71,7 +76,7 @@ public class ShareActivity extends BaseActivity {
         mImgUri = Uri.parse(getIntent().getStringExtra(Constants.KEY_URI_IMAGE));
         RelativeLayout mAdView = findViewById(R.id.adView);
         AdsNetwork.showAdmobBanner(this,mAdView);
-        loadBannerAds(mAdView);
+        //loadBannerAds(mAdView);
 
         Glide.with(ShareActivity.this)
                 .asBitmap()

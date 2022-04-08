@@ -540,6 +540,7 @@ public class PixLabActivity extends BaseActivity implements View.OnClickListener
         startActivity(intent);
         finish();
         overridePendingTransition(R.anim.enter, R.anim.exit);
+        AdsNetwork.shoAdmobInters(this);
     }
 
     private class saveImageTaskMaking extends AsyncTask<String, String, Exception> {
@@ -606,12 +607,13 @@ public class PixLabActivity extends BaseActivity implements View.OnClickListener
             super.onPostExecute(e);
             if (e == null) {
 
-                FullScreenAdManager.fullScreenAdsCheckPref(PixLabActivity.this, FullScreenAdManager.ALL_PREFS.ATTR_ON_SHARE_SCREEN, new FullScreenAdManager.GetBackPointer() {
-                    @Override
-                    public void returnAction() {
-                        openShareActivity();
-                    }
-                });
+                openShareActivity();
+//                FullScreenAdManager.fullScreenAdsCheckPref(PixLabActivity.this, FullScreenAdManager.ALL_PREFS.ATTR_ON_SHARE_SCREEN, new FullScreenAdManager.GetBackPointer() {
+//                    @Override
+//                    public void returnAction() {
+//                        openShareActivity();
+//                    }
+//                });
 
 
             } else {

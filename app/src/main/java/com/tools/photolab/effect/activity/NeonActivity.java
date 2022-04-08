@@ -523,6 +523,7 @@ public class NeonActivity extends BaseActivity implements MenuItemClickLister, O
         startActivity(intent);
         finish();
         overridePendingTransition(R.anim.enter, R.anim.exit);
+        AdsNetwork.shoAdmobInters(this);
     }
 
     public void setUpBottomList() {
@@ -707,12 +708,13 @@ public class NeonActivity extends BaseActivity implements MenuItemClickLister, O
             super.onPostExecute(e);
             findViewById(R.id.ivShowHomeOption).setVisibility(View.VISIBLE);
             if (e == null) {
-                FullScreenAdManager.fullScreenAdsCheckPref(NeonActivity.this, FullScreenAdManager.ALL_PREFS.ATTR_ON_SHARE_SCREEN, new FullScreenAdManager.GetBackPointer() {
-                    @Override
-                    public void returnAction() {
-                        openShareActivity();
-                    }
-                });
+                openShareActivity();
+//                FullScreenAdManager.fullScreenAdsCheckPref(NeonActivity.this, FullScreenAdManager.ALL_PREFS.ATTR_ON_SHARE_SCREEN, new FullScreenAdManager.GetBackPointer() {
+//                    @Override
+//                    public void returnAction() {
+//                        openShareActivity();
+//                    }
+//                });
             } else {
                 Toast.makeText(NeonActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
             }

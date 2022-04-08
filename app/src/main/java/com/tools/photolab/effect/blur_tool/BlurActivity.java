@@ -594,7 +594,67 @@ public class BlurActivity extends BaseActivity implements OnClickListener, OnSee
 
     public void saveImage() {
 
-        FullScreenAdManager.fullScreenAdsCheckPref(BlurActivity.this, FullScreenAdManager.ALL_PREFS.ATTR_SAVED_IMAGE_CLICKED, new FullScreenAdManager.GetBackPointer() {
+        if (tiv.drawingBitmap != null) {
+            AdsNetwork.shoAdmobInters(this);
+            String fileName = getString(R.string.app_file) + System.currentTimeMillis() + Constants.KEY_JPG;
+
+            try {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+
+                    ContentResolver contentResolver = getContentResolver();
+                    ContentValues contentValues = new ContentValues();
+                    contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, fileName);
+                    contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg");
+                    contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES+File.separator+getString(R.string.app_folder2));
+
+                    Uri uri = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
+
+                    FileOutputStream fos = (FileOutputStream) contentResolver.openOutputStream(Objects.requireNonNull(uri));
+                    tiv.drawingBitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+                    Objects.requireNonNull(fos);
+                    if (uri != null) {
+                        Intent intent = new Intent(BlurActivity.this, ShareActivity.class);
+                        intent.putExtra(Constants.KEY_URI_IMAGE, uri.toString());
+                        startActivity(intent);
+                        finish();
+                    }
+                    notifyMediaScannerService(BlurActivity.this, uri.getPath());
+
+                } else {
+                    File myDir = new File(Environment.getExternalStorageDirectory().toString() + getString(R.string.app_folder));
+                    if (!myDir.exists())
+                        myDir.mkdirs();
+
+                    File file = new File(myDir, fileName);
+                    if (oldSavedFileName != null) {
+                        File oldFile = new File(myDir, oldSavedFileName);
+                        if (oldFile.exists()) oldFile.delete();
+                    }
+                    oldSavedFileName = fileName;
+
+                    FileOutputStream out = new FileOutputStream(file);
+                    tiv.drawingBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+                    out.flush();
+                    out.close();
+                    //
+                    Uri uri = SupportedClass.addImageToGallery(BlurActivity.this, file.getAbsolutePath());
+                    if (uri != null) {
+                        Intent intent = new Intent(BlurActivity.this, ShareActivity.class);
+                        intent.putExtra(Constants.KEY_URI_IMAGE, uri.toString());
+                        startActivity(intent);
+                        finish();
+                    }
+                    notifyMediaScannerService(BlurActivity.this, myDir.getAbsolutePath());
+                }
+            } catch (Exception e) {
+                return ;
+//                        Log.i("Error",e.getMessage());
+            } finally {
+                imageViewContainer.setDrawingCacheEnabled(false);
+            }
+        }
+
+        /*FullScreenAdManager.fullScreenAdsCheckPref(BlurActivity.this, FullScreenAdManager.ALL_PREFS.ATTR_SAVED_IMAGE_CLICKED, new FullScreenAdManager.GetBackPointer() {
             @Override
             public void returnAction() {
                 if (tiv.drawingBitmap != null) {
@@ -656,7 +716,7 @@ public class BlurActivity extends BaseActivity implements OnClickListener, OnSee
                     }
                 }
             }
-        });
+        });*/
 
 
     }

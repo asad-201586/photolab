@@ -517,6 +517,7 @@ public class FramesActivity extends BaseActivity implements MenuItemClickLister,
         startActivity(intent);
         finish();
         overridePendingTransition(R.anim.enter, R.anim.exit);
+        AdsNetwork.shoAdmobInters(this);
     }
 
     public void setUpBottomList() {
@@ -683,12 +684,13 @@ public class FramesActivity extends BaseActivity implements MenuItemClickLister,
             if (e == null) {
 
 
-                FullScreenAdManager.fullScreenAdsCheckPref(FramesActivity.this, FullScreenAdManager.ALL_PREFS.ATTR_ON_SHARE_SCREEN, new FullScreenAdManager.GetBackPointer() {
-                    @Override
-                    public void returnAction() {
-                        openShareActivity();
-                    }
-                });
+                openShareActivity();
+//                FullScreenAdManager.fullScreenAdsCheckPref(FramesActivity.this, FullScreenAdManager.ALL_PREFS.ATTR_ON_SHARE_SCREEN, new FullScreenAdManager.GetBackPointer() {
+//                    @Override
+//                    public void returnAction() {
+//                        openShareActivity();
+//                    }
+//                });
 
 
             } else {

@@ -266,6 +266,7 @@ public class DripEffectActivity extends BaseActivity implements MenuItemClickLis
         startActivity(intent);
         finish();
         overridePendingTransition(R.anim.enter, R.anim.exit);
+        AdsNetwork.shoAdmobInters(this);
     }
 
     private void onBottomTabSelected(TabLayout.Tab tab) {
@@ -592,12 +593,13 @@ public class DripEffectActivity extends BaseActivity implements MenuItemClickLis
             super.onPostExecute(e);
             findViewById(R.id.ivShowHomeOption).setVisibility(View.VISIBLE);
             if (e == null) {
-                FullScreenAdManager.fullScreenAdsCheckPref(DripEffectActivity.this, FullScreenAdManager.ALL_PREFS.ATTR_ON_SHARE_SCREEN, new FullScreenAdManager.GetBackPointer() {
-                    @Override
-                    public void returnAction() {
-                        openShareActivity();
-                    }
-                });
+                openShareActivity();
+//                FullScreenAdManager.fullScreenAdsCheckPref(DripEffectActivity.this, FullScreenAdManager.ALL_PREFS.ATTR_ON_SHARE_SCREEN, new FullScreenAdManager.GetBackPointer() {
+//                    @Override
+//                    public void returnAction() {
+//                        openShareActivity();
+//                    }
+//                });
 
 
             } else {

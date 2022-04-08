@@ -390,13 +390,13 @@ public class MotionEffectActivity extends BaseActivity {
             super.onPostExecute(e);
             if (e == null) {
 
-
-                FullScreenAdManager.fullScreenAdsCheckPref(MotionEffectActivity.this, FullScreenAdManager.ALL_PREFS.ATTR_ON_SHARE_SCREEN, new FullScreenAdManager.GetBackPointer() {
-                    @Override
-                    public void returnAction() {
-                        openShareActivity();
-                    }
-                });
+                openShareActivity();
+//                FullScreenAdManager.fullScreenAdsCheckPref(MotionEffectActivity.this, FullScreenAdManager.ALL_PREFS.ATTR_ON_SHARE_SCREEN, new FullScreenAdManager.GetBackPointer() {
+//                    @Override
+//                    public void returnAction() {
+//                        openShareActivity();
+//                    }
+//                });
 
 
             } else {
@@ -412,6 +412,7 @@ public class MotionEffectActivity extends BaseActivity {
         startActivity(intent);
         finish();
         overridePendingTransition(R.anim.enter, R.anim.exit);
+        AdsNetwork.shoAdmobInters(this);
     }
 
 
