@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.ads.AdsNetwork;
 import com.tools.photolab.R;
 import com.tools.photolab.effect.custom.TouchImageView;
 import com.tools.photolab.effect.support.Constants;
@@ -30,7 +31,8 @@ public class CreatePhotoViewActivity extends BaseActivity {
         setContentView(R.layout.activity_create_photo_view);
         Thread.setDefaultUncaughtExceptionHandler(new MyExceptionHandlerPix(CreatePhotoViewActivity.this));
         RelativeLayout mAdView = findViewById(R.id.adView);
-        loadBannerAds(mAdView);
+        AdsNetwork.showAdmobBanner(this,mAdView);
+        //loadBannerAds(mAdView);
 
         mMainImage = (TouchImageView) findViewById(R.id.iv_create_image);
         imgUri = Uri.parse(getIntent().getStringExtra(Constants.KEY_URI_IMAGE));

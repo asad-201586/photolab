@@ -51,6 +51,7 @@ import androidx.core.content.FileProvider;
 import androidx.core.view.MotionEventCompat;
 import androidx.core.view.ViewCompat;
 
+import com.ads.AdsNetwork;
 import com.tools.photolab.BuildConfig;
 import com.tools.photolab.R;
 import com.tools.photolab.effect.activity.BaseActivity;
@@ -390,7 +391,8 @@ public class BlurActivity extends BaseActivity implements OnClickListener, OnSee
 
         imageViewContainer = findViewById(R.id.imageViewContainer);
         RelativeLayout mAdView = findViewById(R.id.adView);
-        loadBannerAds(mAdView);
+        AdsNetwork.showAdmobBanner(this,mAdView);
+        //loadBannerAds(mAdView);
         this.hand = BitmapFactory.decodeResource(getResources(), R.drawable.hand);
         this.hand = Bitmap.createScaledBitmap(this.hand, 120, 120, true);
         this.blurView = (LinearLayout) findViewById(R.id.blur_view);

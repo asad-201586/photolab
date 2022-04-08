@@ -43,6 +43,7 @@ import androidx.palette.graphics.Palette;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ads.AdsNetwork;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 
@@ -149,7 +150,8 @@ public class DripEffectActivity extends BaseActivity implements MenuItemClickLis
         findViewById(R.id.ivShowHomeOption).setVisibility(View.GONE);
         this.ll_styles = (LinearLayout) findViewById(R.id.styles);
         RelativeLayout mAdView = findViewById(R.id.adView);
-        loadBannerAds(mAdView);
+        AdsNetwork.showAdmobBanner(this,mAdView);
+        //loadBannerAds(mAdView);
 
 
         new Handler().postDelayed(new Runnable() {

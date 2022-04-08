@@ -13,6 +13,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.ads.AdsNetwork;
 import com.bumptech.glide.Glide;
 import com.tools.photolab.R;
 import com.tools.photolab.effect.ads.FullScreenAdManager;
@@ -69,6 +70,7 @@ public class ShareActivity extends BaseActivity {
         mIvCreate = (ImageView) findViewById(R.id.iv_create);
         mImgUri = Uri.parse(getIntent().getStringExtra(Constants.KEY_URI_IMAGE));
         RelativeLayout mAdView = findViewById(R.id.adView);
+        AdsNetwork.showAdmobBanner(this,mAdView);
         loadBannerAds(mAdView);
 
         Glide.with(ShareActivity.this)

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.ads.AdsNetwork;
 import com.tools.photolab.R;
 import com.tools.photolab.effect.adapter.CreatePhotosAdapter;
 import com.tools.photolab.effect.ads.FullScreenAdManager;
@@ -35,7 +36,8 @@ public class MyCreatePhotosActivity extends BaseActivity {
         setContentView(R.layout.activity_my_photos);
         Thread.setDefaultUncaughtExceptionHandler(new MyExceptionHandlerPix(MyCreatePhotosActivity.this));
         RelativeLayout mAdView = findViewById(R.id.adView);
-        loadBannerAds(mAdView);
+        AdsNetwork.showAdmobBanner(this,mAdView);
+        //loadBannerAds(mAdView);
 
         findViewById(R.id.relDataNotFound).setVisibility(View.GONE);
 

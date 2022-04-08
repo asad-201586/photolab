@@ -43,6 +43,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ads.AdsNetwork;
 import com.google.android.material.tabs.TabLayout;
 import com.tools.photolab.R;
 import com.tools.photolab.effect.custom.stickerView.DrawableSticker;
@@ -109,7 +110,8 @@ public class NeonActivity extends BaseActivity implements MenuItemClickLister, O
         mContext = this;
         selectedBit = faceBitmap;
         RelativeLayout mAdView = findViewById(R.id.adView);
-        loadBannerAds(mAdView);
+        AdsNetwork.showAdmobBanner(this,mAdView);
+        //loadBannerAds(mAdView);
 
         new Handler().postDelayed(new Runnable() {
             public void run() {

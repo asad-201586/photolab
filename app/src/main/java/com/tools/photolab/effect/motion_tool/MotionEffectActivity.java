@@ -38,6 +38,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.ItemTouchHelper;
 
+import com.ads.AdsNetwork;
 import com.tools.photolab.R;
 import com.tools.photolab.effect.activity.BaseActivity;
 import com.tools.photolab.effect.activity.ShareActivity;
@@ -173,7 +174,8 @@ public class MotionEffectActivity extends BaseActivity {
         setContentView(R.layout.activity_motion_tool);
         Thread.setDefaultUncaughtExceptionHandler(new MyExceptionHandlerPix(MotionEffectActivity.this));
         RelativeLayout mAdView = findViewById(R.id.adView);
-        loadBannerAds(mAdView);
+        AdsNetwork.showAdmobBanner(this,mAdView);
+        //loadBannerAds(mAdView);
 
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.crop_progress_bar);
         //  Toolbar toolbar = (Toolbar) findViewById(R.id.drip_effect_toolbar);

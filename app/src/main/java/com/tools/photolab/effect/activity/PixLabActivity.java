@@ -36,6 +36,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ads.AdsNetwork;
 import com.flask.colorpicker.ColorPickerView;
 import com.flask.colorpicker.OnColorSelectedListener;
 import com.flask.colorpicker.builder.ColorPickerClickListener;
@@ -110,7 +111,8 @@ public class PixLabActivity extends BaseActivity implements View.OnClickListener
         displayWidth = displayMetrics.widthPixels;
 
         RelativeLayout mAdView = findViewById(R.id.adView);
-        loadBannerAds(mAdView);
+        AdsNetwork.showAdmobBanner(this,mAdView);
+        //loadBannerAds(mAdView);
         arrIcon = new ArrayList<>();
         arrMask = new ArrayList<>();
         mRecyclerPIXStyle = (RecyclerView) findViewById(R.id.recyclerPIXStyle);

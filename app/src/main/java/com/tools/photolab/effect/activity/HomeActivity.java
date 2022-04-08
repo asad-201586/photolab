@@ -28,6 +28,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
+import com.ads.AdsNetwork;
 import com.google.ads.consent.ConsentForm;
 import com.google.ads.consent.ConsentFormListener;
 import com.google.ads.consent.ConsentInfoUpdateListener;
@@ -52,7 +53,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import static android.Manifest.permission.CAMERA;
-import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static com.tools.photolab.effect.color_splash_tool.ColorSplashActivity.REQUEST_CODE_CAMERA;
 
@@ -81,7 +81,8 @@ public class HomeActivity extends BaseActivity {
         Thread.setDefaultUncaughtExceptionHandler(new MyExceptionHandlerPix(HomeActivity.this));
 
         RelativeLayout mAdView = findViewById(R.id.adView);
-        loadBannerAds(mAdView);
+        //loadBannerAds(mAdView);
+        AdsNetwork.showAdmobBanner(this,mAdView);
 
 
         DisplayMetrics displayMetrics = new DisplayMetrics();

@@ -56,6 +56,7 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.core.content.FileProvider;
 
+import com.ads.AdsNetwork;
 import com.tools.photolab.BuildConfig;
 import com.tools.photolab.R;
 import com.tools.photolab.effect.activity.BaseActivity;
@@ -141,7 +142,8 @@ public class ColorSplashActivity extends BaseActivity implements OnClickListener
         Thread.setDefaultUncaughtExceptionHandler(new MyExceptionHandlerPix(ColorSplashActivity.this));
 
         RelativeLayout mAdView = findViewById(R.id.adView);
-        loadBannerAds(mAdView);
+        AdsNetwork.showAdmobBanner(this,mAdView);
+        //loadBannerAds(mAdView);
 
         imageViewContainer = findViewById(R.id.imageViewContainer);
         this.saveLoader = new ProgressDialog(this);

@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.ads.AdsNetwork;
 import com.tools.photolab.R;
 import com.tools.photolab.effect.activity.crop_fragment.CropImageFragmentPix;
 import com.tools.photolab.effect.support.MyExceptionHandlerPix;
@@ -23,7 +24,8 @@ public class CropPhotoActivity extends BaseActivity {
         Thread.setDefaultUncaughtExceptionHandler(new MyExceptionHandlerPix(CropPhotoActivity.this));
 
         RelativeLayout mAdView = findViewById(R.id.adView);
-        loadBannerAds(mAdView);
+        AdsNetwork.showAdmobBanner(this,mAdView);
+        //loadBannerAds(mAdView);
         findViewById(R.id.iv_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
