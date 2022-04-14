@@ -59,6 +59,7 @@ import androidx.core.content.FileProvider;
 import com.ads.AdsNetwork;
 import com.tools.photolab.BuildConfig;
 import com.tools.photolab.R;
+import com.tools.photolab.effect.Common;
 import com.tools.photolab.effect.activity.BaseActivity;
 import com.tools.photolab.effect.activity.ShareActivity;
 import com.tools.photolab.effect.ads.FullScreenAdManager;
@@ -675,6 +676,7 @@ public class ColorSplashActivity extends BaseActivity implements OnClickListener
         gallery_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Common.FROM = Common.GALLERY;
                 Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 intent.setType("image/*");
                 intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
@@ -687,6 +689,7 @@ public class ColorSplashActivity extends BaseActivity implements OnClickListener
         camera_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Common.FROM = Common.GALLERY;
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 Uri photoURI = FileProvider.getUriForFile(getApplicationContext(), BuildConfig.APPLICATION_ID + ".provider", createImageFile());
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);

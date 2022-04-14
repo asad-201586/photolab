@@ -1,22 +1,20 @@
 package com.tools.photolab.effect;
 
+import android.app.Application;
 import android.content.Context;
+import android.util.Log;
 
 import androidx.multidex.MultiDex;
 
 import com.appOpenManager.AppOpenManager;
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.firebase.FirebaseApp;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+public class MainApplication extends Application {
 
-public class MainApplication extends android.app.Application {
+
 
     public static Context context;
     private static AppOpenManager appOpenManager;
@@ -64,6 +62,7 @@ public class MainApplication extends android.app.Application {
     }
 
     private void appOpenAds() {
+        Log.d("ads_db", "appOpenAds: app open ads");
         MobileAds.initialize(this, initializationStatus -> {});
         appOpenManager = new AppOpenManager(this);
     }

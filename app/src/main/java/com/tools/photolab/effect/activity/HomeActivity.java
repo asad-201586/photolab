@@ -36,6 +36,7 @@ import com.google.ads.consent.ConsentInformation;
 import com.google.ads.consent.ConsentStatus;
 import com.tools.photolab.BuildConfig;
 import com.tools.photolab.R;
+import com.tools.photolab.effect.Common;
 import com.tools.photolab.effect.ads.FullScreenAdManager;
 import com.tools.photolab.effect.blur_tool.BlurActivity;
 import com.tools.photolab.effect.color_splash_tool.ColorSplashActivity;
@@ -213,9 +214,10 @@ public class HomeActivity extends BaseActivity {
                     takeAction();
                 else
                     takePermission();
-
             }
         });
+
+        Common.FROM = Common.HOME;
 
     }
 
@@ -428,6 +430,7 @@ public class HomeActivity extends BaseActivity {
         gallery_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Common.FROM = Common.GALLERY;
                 Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 intent.setType("image/*");
                 intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
@@ -440,6 +443,7 @@ public class HomeActivity extends BaseActivity {
         camera_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Common.FROM = Common.GALLERY;
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 Uri photoURI = FileProvider.getUriForFile(getApplicationContext(), BuildConfig.APPLICATION_ID + ".provider", createImageFile());
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
@@ -686,5 +690,11 @@ public class HomeActivity extends BaseActivity {
         DRIP_EFFECT,
         MY_PHOTOS,
         MOTION_EFFECT
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Common.FROM = Common.HOME;
     }
 }

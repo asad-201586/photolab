@@ -1,6 +1,9 @@
 package com.appOpenManager;
 
+
+import static androidx.lifecycle.Lifecycle.Event.ON_CREATE;
 import static androidx.lifecycle.Lifecycle.Event.ON_START;
+import static androidx.lifecycle.Lifecycle.Event.ON_STOP;
 
 import android.app.Activity;
 import android.app.Application;
@@ -12,6 +15,8 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleEventObserver;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
 import androidx.lifecycle.ProcessLifecycleOwner;
@@ -23,6 +28,7 @@ import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.appopen.AppOpenAd;
+import com.tools.photolab.effect.Common;
 import com.tools.photolab.effect.MainApplication;
 
 import java.util.Arrays;
@@ -31,7 +37,7 @@ import java.util.List;
 
 
 @RequiresApi(api = Build.VERSION_CODES.ICE_CREAM_SANDWICH)
-public class AppOpenManager implements LifecycleObserver, Application.ActivityLifecycleCallbacks{
+public class AppOpenManager implements LifecycleObserver, Application.ActivityLifecycleCallbacks {
     private static final String LOG_TAG = "AppOpenManager";
     private static final String AD_UNIT_ID = "ca-app-pub-3940256099942544/3419835294";// add real id
     private AppOpenAd appOpenAd = null;
@@ -43,10 +49,13 @@ public class AppOpenManager implements LifecycleObserver, Application.ActivityLi
     private static boolean isShowingAd = false;
     private long loadTime = 0;
     private Context context;
+    private int counter;
 
     /** Constructor */
     public AppOpenManager(MainApplication myApplication) {
         context = myApplication.getApplicationContext();
+        counter = 0 ;
+        Log.d(LOG_TAG, "AppOpenManager: constructor called");
         this.myApplication = myApplication;
         this.myApplication.registerActivityLifecycleCallbacks(this);
         ProcessLifecycleOwner.get().getLifecycle().addObserver(this);
@@ -56,6 +65,7 @@ public class AppOpenManager implements LifecycleObserver, Application.ActivityLi
     public void showAdIfAvailable() {
         // Only show ad if there is not already an app open ad currently showing
         // and an ad is available.
+        counter++;
         new Handler().postDelayed(this::showAdmobOpenAds, 3000);
     }
 
@@ -94,7 +104,18 @@ public class AppOpenManager implements LifecycleObserver, Application.ActivityLi
     /** LifecycleObserver methods */
     @OnLifecycleEvent(ON_START)
     public void onStart() {
-        showAdIfAvailable();
+        Log.d(LOG_TAG, "onStart: app open ads @OnStart");
+        Log.d(LOG_TAG, "counter: "+counter);
+        if (counter == 0)
+            showAdIfAvailable();
+    }
+
+    @OnLifecycleEvent(ON_STOP)
+    public void onStop() {
+        Log.d(LOG_TAG, "onStop: app open ads @onStop");
+        if (Common.FROM.equals(Common.HOME)) {
+            counter = 0;
+        }
     }
 
     /** Request an ad */
